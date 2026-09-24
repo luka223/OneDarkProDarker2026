@@ -1,6 +1,6 @@
 Name: One Dark Pro Darker 2026
 Identity: OneDarkProDarker2026
-Version: 1.0.0
+Version: 1.0.1
 GUID: dfd30456-3986-4e15-92e6-6b76c2a17a67
 BaseGUID: 1ded0138-47ce-435e-84ef-9ec1f439b749
 
@@ -1236,9 +1236,9 @@ Sections:
     ScreenTipBorder: ["#ffe4d6", null]
     ScreenTipBackground: ["#ffe4d6", null]
     ScreenTipText: ["#23272e", null]
-    SideBarBackground: ["#23272e", null]
-    SideBarGradientDark: ["#23272e", null]
-    SideBarGradientLight: ["#23272e", null]
+    SideBarBackground: ["#1e2227", null]
+    SideBarGradientDark: ["#1e2227", null]
+    SideBarGradientLight: ["#1e2227", null]
     SideBarText: ["#bdbdbd", null]
     SmartTagBorder: ["#e5c365", null]
     SmartTagFill: ["#ffefbb", null]
@@ -1571,8 +1571,8 @@ Sections:
     Halo: ["#f6f6f6", null]
     FileTabParentText: ["#bdbdbd", null]
     FileTabGroupTitleBackground: ["#1e2227", null]
-    FileTabActiveGroupTitleBackground: ["#23272e", null]
-    FileTabActiveGroupBackground: ["#23272e", null]
+    FileTabActiveGroupTitleBackground: ["#1e2227", null]
+    FileTabActiveGroupBackground: ["#1e2227", null]
   Find:
     GUID: 4370282e-987e-4ac4-ad14-5ffed2ad1e14
     DropDownMenuMouseDown: ["#323842", "#efefef"]
@@ -2168,7 +2168,7 @@ Sections:
     ActionButtonBackgroundActive: ["#1e2227", null]
   TreeView:
     GUID: 92ecf08e-8b13-4cf4-99e9-ae2692382185
-    Background: ["#23272e", "#bdbdbd"]
+    Background: ["#1e2227", "#bdbdbd"]
     SelectedItemActive: ["#323842", "#efefef"]
     SelectedItemInactive: ["#2c313a", "#efefef"]
     FocusVisualBorder: ["#323842", null]
@@ -2476,7 +2476,8 @@ Sections:
     AccentFillDefault: ["#343a45", null]
     AccentFillSecondary: ["#343a45e5", null]
     AccentFillTertiary: ["#343a45cc", null]
-    SolidBackgroundFillTertiary: ["#23272e", null]
+    # VS 2026 tool-window frames and toolbars use this shared pane surface.
+    SolidBackgroundFillTertiary: ["#1e2227", null]
     SolidBackgroundFillQuaternary: ["#1e2227", null]
     TextFillSecondary: ["#ffffffcc", null]
     SystemFillAttention: ["#588295", null]
@@ -2485,9 +2486,9 @@ Sections:
     TextOnAccentFillDisabled: ['#ffffff80', null]
     TextOnAccentFillPrimary: ['#ffffff', null]
     TextOnAccentFillSecondary: ['#ffffff80', null]
-    SolidBackgroundFillBase: ["#23272e", null]
-    CardBackgroundFillDefault: ["#23272e", null]
-    LayerFillDefault: ["#23272e", null]
+    SolidBackgroundFillBase: ["#1e2227", null]
+    CardBackgroundFillDefault: ["#1e2227", null]
+    LayerFillDefault: ["#1e2227", null]
     ControlFillSecondary: ["#2c313a", null]
     ControlFillTertiary: ["#2c313a", null]
     ControlFillInputActive: ["#2c313a", null]
@@ -2507,8 +2508,8 @@ Sections:
     EnvironmentBorderInactive: ["#343a45", null]
     EnvironmentIndicator: ["#ffffff60", null]
     EnvironmentLogo: ["#54a4e3", null]
-    EnvironmentHeader: ["#23272e", null]
-    EnvironmentHeaderInactive: ["#23272e", null]
+    EnvironmentHeader: ["#1e2227", null]
+    EnvironmentHeaderInactive: ["#1e2227", null]
     EnvironmentTab: ["#23272e", null]
     EnvironmentTabInactive: ["#1e2227", null]
     EnvironmentLayeredBackground: ["#0000004d", null]

@@ -1,6 +1,6 @@
 ## One Dark Pro Darker 2026 - Dark theme for Visual Studio 2026
 
-**One Dark Pro Darker 2026** brings the [VS Code One Dark Pro Darker palette](https://github.com/Binaryify/OneDark-Pro/blob/master/themes/OneDark-Pro-darker.json) to **Visual Studio 2026**. It uses `#23272e` for the editor and active tabs, `#1e2227` for surrounding chrome, and the existing One Dark Pro syntax colors.
+**One Dark Pro Darker 2026** brings the [VS Code One Dark Pro Darker palette](https://github.com/Binaryify/OneDark-Pro/blob/master/themes/OneDark-Pro-darker.json) to **Visual Studio 2026**. It uses `#23272e` for the editor and selected tab, `#1e2227` for side panes such as Solution Explorer and Git Changes, the tab strip, tool-window headers, and surrounding chrome, and the existing One Dark Pro syntax colors.
 
 This version preserves the original aesthetic, but includes:
 
@@ -65,6 +65,8 @@ These screenshots show the original Visual Studio 2026 adaptation before the Dar
 ---
 
 ## Customizing the Theme
+
+Visual Studio 2026 pane backgrounds use the shared `Shell` surface colors, including `SolidBackgroundFillTertiary`, `SolidBackgroundFillBase`, `CardBackgroundFillDefault`, and `LayerFillDefault`. Keep these at `#1e2227` for darker side panes; the editor background is configured separately under `Text Editor Text Manager Items`. The older `Environment.ToolWindowBackground` and `TreeView.Background` entries also use `#1e2227` for compatibility.
 
 Edit everything inside:
 
