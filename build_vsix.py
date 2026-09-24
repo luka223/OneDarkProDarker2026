@@ -116,6 +116,7 @@ def content_types_xml_data() -> str:
   <Default Extension="pkgdef" ContentType="text/plain" />
   <Default Extension="png" ContentType="application/octet-stream" />
   <Default Extension="json" ContentType="application/json" />
+  <Default Extension="txt" ContentType="text/plain" />
 </Types>
     """.strip()
 
@@ -126,6 +127,7 @@ def vsixmanifest_data(theme: Any) -> str:
     <Identity Id="{theme.id}" Version="{theme.version}" Language="en-US" Publisher="{theme.author}" />
     <DisplayName>{theme.name}</DisplayName>
     <Description xml:space="preserve">{theme.description}</Description>
+    <License>LICENSE.txt</License>
     {f"<Icon>{theme.icon}</Icon>" if theme.icon else ""}
     <Tags>{theme.tags}</Tags>
   </Metadata>
@@ -215,6 +217,11 @@ def main() -> int:
 
         file = work_dir / "manifest.json"
         file.write_text(manifest_json_data(theme), encoding="utf-8")
+        files.append(file)
+
+        license_path = Path(__file__).with_name("LICENSE")
+        file = work_dir / "LICENSE.txt"
+        shutil.copy(license_path, file)
         files.append(file)
 
         with zipfile.ZipFile(theme.vsix_file, "w", compression=zipfile.ZIP_DEFLATED) as zip:
