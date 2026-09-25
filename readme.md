@@ -55,11 +55,9 @@ OneDarkProDarker2026.vsix
 
 ---
 
-## Base Theme Screenshots
-
-These screenshots show the original Visual Studio 2026 adaptation before the Darker palette changes.
-
+## Theme Screenshots
 ![Preview](doc/screenshot-cs.png)
+
 ![Preview](doc/screenshot-cpp.png)
 
 ---
