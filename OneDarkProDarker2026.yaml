@@ -1,6 +1,6 @@
 Name: One Dark Pro Darker 2026
 Identity: OneDarkProDarker2026
-Version: 1.0.1
+Version: 1.0.2
 GUID: dfd30456-3986-4e15-92e6-6b76c2a17a67
 BaseGUID: 1ded0138-47ce-435e-84ef-9ec1f439b749
 
@@ -141,7 +141,7 @@ Sections:
     Peek Highlighted Text Unfocused: ["#454545", null]
     punctuation: [05x00000000, "#bbbbbb"]
     interface name: [05x00000000, "#b8d7a3"]
-    type parameter name: [05x00000000, "#e5c07b"]
+    type parameter name: [05x00000000, "#b8d7a3"]
     enum name: [05x00000000, "#b8d7a3"]
     module name: [05x00000000, "#e5c07b"]
     class name: [05x00000000, "#e5c07b"]
@@ -334,7 +334,7 @@ Sections:
     ReSharper Enum Identifier: [05x00000000, "#b8d7a3"]
     ReSharper Interface Identifier: [05x00000000, "#b8d7a3"]
     ReSharper Delegate Identifier: [05x00000000, "#add8e6"]
-    ReSharper Type Parameter Identifier: [05x00000000, "#add8e6"]
+    ReSharper Type Parameter Identifier: [05x00000000, "#b8d7a3"]
     ReSharper Search with Pattern Editor Template Keyword: [05x00000000, "#87cefa"]
     ReSharper Search with Pattern Editor Template Placeholder: [05x00000000, "#add8e6"]
     ReSharper Search with Pattern Editor Template Undefined Placeholder: [05x00000000, "#ff0000"]
@@ -395,7 +395,7 @@ Sections:
     ReSharper TypeScript Enum Identifier: [05x00000000, "#b8d7a3"]
     ReSharper TypeScript Module Identifier: [05x00000000, "#add8e6"]
     ReSharper TypeScript Alias Identifier: [05x00000000, "#add8e6"]
-    ReSharper TypeScript Type Parameter Identifier: [05x00000000, "#add8e6"]
+    ReSharper TypeScript Type Parameter Identifier: [05x00000000, "#b8d7a3"]
     ReSharper TypeScript Constrained Element Identifier: [05x00000000, "#90ee90"]
     ReSharper TypeScript Variable Declaration Identifier: [05x00000000, null]
     ReSharper Template Editor JavaScript Comment: [05x00000000, "#90ee90"]
@@ -448,7 +448,7 @@ Sections:
     ReSharper C# Enum Identifier: [05x00000000, "#b8d7a3"]
     ReSharper C# Interface Identifier: [05x00000000, "#b8d7a3"]
     ReSharper C# Delegate Identifier: [05x00000000, "#add8e6"]
-    ReSharper C# Type Parameter Identifier: [05x00000000, "#add8e6"]
+    ReSharper C# Type Parameter Identifier: [05x00000000, "#b8d7a3"]
     ReSharper C# Overflow Checked Operation: [05x00000000, null]
     ReSharper Template Editor C# Keyword: [05x00000000, "#87cefa"]
     ReSharper Template Editor C# Comment: [05x00000000, "#90ee90"]
