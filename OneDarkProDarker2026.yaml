@@ -1,6 +1,6 @@
 Name: One Dark Pro Darker 2026
 Identity: OneDarkProDarker2026
-Version: 1.0.2
+Version: 1.0.3
 GUID: dfd30456-3986-4e15-92e6-6b76c2a17a67
 BaseGUID: 1ded0138-47ce-435e-84ef-9ec1f439b749
 
@@ -240,8 +240,8 @@ Sections:
     parameter name: [null, "#e06c75"]
     field name: [null, "#d4d4d4"]
     property name: [null, "#d4d4d4"]
-    constant name: [null, "#b8d7a3"]
-    enum member name: [null, "#b8d7a3"]
+    constant name: [null, "#d4d4d4"]
+    enum member name: [null, "#d4d4d4"]
     method name: [null, "#61afef"]
     extension method name: [null, "#61afef"]
     namespace name: [null, "#c8c8c8"]
@@ -305,8 +305,8 @@ Sections:
     ReSharper Usage of element under cursor: ["#0e4583", null]
     ReSharper Smart Paste: [05x00000000, null]
     ReSharper Default Identifier: [05x00000000, null]
-    ReSharper Constant Identifier: [05x00000000, "#b8d7a3"]
-    ReSharper Enum Member Identifier: [05x00000000, "#b8d7a3"]
+    ReSharper Constant Identifier: [05x00000000, "#d4d4d4"]
+    ReSharper Enum Member Identifier: [05x00000000, "#d4d4d4"]
     ReSharper Event Identifier: [05x00000000, "#dda0dd"]
     ReSharper Field Identifier: [05x00000000, "#d4d4d4"]
     ReSharper Static Field Identifier: [05x00000000, "#d4d4d4"]
@@ -375,7 +375,7 @@ Sections:
     ReSharper Template Editor CSS Keyword: [05x00000000, "#87cefa"]
     ReSharper JavaScript Local Variable Identifier: [05x00000000, null]
     ReSharper JavaScript Block-Local Variable Identifier: [05x00000000, "#8ee69d"]
-    ReSharper JavaScript Block-Local Constant Identifier: [05x00000000, "#8ee69d"]
+    ReSharper JavaScript Block-Local Constant Identifier: [05x00000000, "#d4d4d4"]
     ReSharper JavaScript Parameter Identifier: [05x00000000, null]
     ReSharper JavaScript Function Identifier: [05x00000000, "#00ffff"]
     ReSharper JavaScript Local Function Identifier: [05x00000000, "#94fcfc"]
@@ -423,8 +423,8 @@ Sections:
     ReSharper Template Editor HTML Tag: [05x00000000, "#87cefa"]
     ReSharper C# Escape Character 1: [05x00000000, "#e07a00"]
     ReSharper C# Escape Character 2: [05x00000000, "#ff8d1c"]
-    ReSharper C# Constant Identifier: [05x00000000, "#b8d7a3"]
-    ReSharper C# Enum Member Identifier: [05x00000000, "#b8d7a3"]
+    ReSharper C# Constant Identifier: [05x00000000, "#d4d4d4"]
+    ReSharper C# Enum Member Identifier: [05x00000000, "#d4d4d4"]
     ReSharper C# Event Identifier: [05x00000000, "#dda0dd"]
     ReSharper C# Field Identifier: [05x00000000, "#d4d4d4"]
     ReSharper C# Static Field Identifier: [05x00000000, "#d4d4d4"]
@@ -465,7 +465,7 @@ Sections:
     ReSharper C++ Class Field Identifier: [05x00000000, "#d4d4d4"]
     ReSharper C++ Struct Field Identifier: [05x00000000, "#d4d4d4"]
     ReSharper C++ Static Field Identifier: [05x00000000, "#d4d4d4"]
-    ReSharper C++ Enum Enumerator Identifier: [05x00000000, "#b8d7a3"]
+    ReSharper C++ Enum Enumerator Identifier: [05x00000000, "#d4d4d4"]
     ReSharper C++ Union Member Identifier: [05x00000000, "#d4d4d4"]
     ReSharper C++ Typedef Identifier: [05x00000000, "#4ec9b0"]
     ReSharper C++ Global Function Identifier: [05x00000000, "#add8e6"]

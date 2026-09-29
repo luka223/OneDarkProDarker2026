@@ -8,7 +8,7 @@ This version preserves the original aesthetic, but includes:
 * adjustments for the new VS2026 color engine
 * darker editor, tab, tool window, title bar, and status bar surfaces
 * improved visibility across tool windows and editor areas
-* near-white class fields and properties, while local variable colors stay unchanged
+* near-white class fields, properties, constants, and enum members, while other local variable colors stay unchanged
 * compatibility fixes for the updated Visual Studio UI
 * **a full VSIX build script for easy editing and rebuilding**
 
@@ -75,7 +75,7 @@ OneDarkPro2026.yaml
 Then rebuild:
 
 ```sh
-python build_vsix.py -i OneDarkPro2026.yaml -o OneDarkProDarker2026
+python build_vsix.py -i OneDarkProDarker2026.yaml -o OneDarkProDarker2026
 ```
 
 You can modify:
