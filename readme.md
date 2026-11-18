@@ -1,98 +1,73 @@
-## One Dark Pro Darker 2026 - Dark theme for Visual Studio 2026
+## One Dark Pro Darker 2026
 
-**One Dark Pro Darker 2026** brings the [VS Code One Dark Pro Darker palette](https://github.com/Binaryify/OneDark-Pro/blob/master/themes/OneDark-Pro-darker.json) to **Visual Studio 2026**. It uses `#23272e` for the editor and selected tab, `#1e2227` for side panes such as Solution Explorer and Git Changes, the tab strip, tool-window headers, and surrounding chrome, and the existing One Dark Pro syntax colors.
+> A darker variant of [One Dark Pro 2026](https://github.com/bayaraa/OneDarkPro2026) by [Bayaraa](https://github.com/bayaraa), released under the MIT license. This is a fork, not the original theme. If you want the standard One Dark Pro look, install Bayaraa's extension instead.
 
-This version preserves the original aesthetic, but includes:
-
-* fixes for outdated or deprecated theme keys
-* adjustments for the new VS2026 color engine
-* darker editor, tab, tool window, title bar, and status bar surfaces
-* improved visibility across tool windows and editor areas
-* near-white class fields, properties, constants, and enum members, while other local variable colors stay unchanged
-* compatibility fixes for the updated Visual Studio UI
-* **a full VSIX build script for easy editing and rebuilding**
+The original One Dark Pro 2026 uses the classic One Dark editor gray (`#282c34`). This variant follows the **Darker** palette that [Binaryify's One Dark Pro for VS Code](https://github.com/Binaryify/OneDark-Pro/blob/master/themes/OneDark-Pro-darker.json) ships as a separate theme. The editor and the IDE around it are darker, and a few syntax colors are reassigned so that members and types are easier to tell apart.
 
 ---
 
-## Repository Contents
+## What this variant changes
 
-```
-build_vsix.py        – Python script that builds a .vsix theme from the YAML config
-OneDarkProDarker2026.yaml  – Darker theme configuration with updated color sections
-OneDarkProDarker2026.png   – Theme icon image for extension tab/marketplace page
-```
+| Element | One Dark Pro 2026 | One Dark Pro Darker 2026 |
+|---|---|---|
+| Editor background, selected tab | `#282c34` | `#23272e` |
+| Side panes (Solution Explorer, Git Changes, …), tool windows, tab strip | `#282c34` | `#1e2227` |
+| Status bar | `#353941` | `#1e2227` |
+| Title bar | `#2e323a` | `#23272e` |
+| Fields | `#e06c75` (red) | `#d4d4d4` (near-white) |
+| Properties | `#d19a66` (orange) | `#d4d4d4` (near-white) |
+| Constants and enum members | `#b8d7a3` (green) | `#d4d4d4` (near-white) |
+| Interfaces, enums, and generic type parameters | `#e5c07b` (yellow) | `#b8d7a3` (green) |
 
-The repository **includes a standalone VS theme build script**, allowing you to:
+ReSharper's matching identifier colors (C#, C++, TypeScript) follow the same mapping. Everything else in the editor, including keywords, strings, comments, methods, and local variables, keeps the One Dark Pro 2026 colors. Hover, border, and button colors across the IDE are shifted one step darker to match the new backgrounds.
 
-* edit colors directly in YAML
-* rebuild a complete VSIX with one command
-* tweak, fork, or customize the theme quickly
+The side panes are one step darker than the editor, so the code area stands out from the surrounding tool windows.
 
+![The same C++ file in both themes, with each difference numbered](doc/compare-themes.png)
+
+*Real Visual Studio 2026 screenshots of the same file. Left: the original theme, from Bayaraa's repository. Right: this fork.*
 
 ---
 
-## Building the VSIX
+## Screenshots
 
-Requires **Python 3.8+** and the **PyYAML** library.
+![C# in One Dark Pro Darker 2026](doc/screenshot-cs.png)
 
-### 1. Install dependency:
+![C++ in One Dark Pro Darker 2026](doc/screenshot-cpp.png)
+
+---
+
+## Building from source
+
+The theme is defined in a single YAML file and packaged with the Python build script inherited from the original project. You need **Python 3.8+** and **PyYAML**:
 
 ```sh
 pip install pyyaml
-```
-
-### 2. Build the theme:
-
-```sh
 python build_vsix.py -i OneDarkProDarker2026.yaml -o OneDarkProDarker2026
 ```
 
-The script produces VS extension (theme):
+This produces `OneDarkProDarker2026.vsix`, which you can install by double-clicking it.
 
-```
-OneDarkProDarker2026.vsix
-```
+### Releases
 
----
+To publish a release, bump `Version` in `OneDarkProDarker2026.yaml` and push to `main`. The [Release workflow](.github/workflows/release.yml) builds the `.vsix`, tags the commit `vX.Y.Z`, and attaches the file to a new GitHub release. If that version is already tagged, the workflow does nothing.
 
-## Theme Screenshots
-![Preview](doc/screenshot-cs.png)
+| File | Purpose |
+|---|---|
+| `OneDarkProDarker2026.yaml` | Theme metadata and every color entry |
+| `build_vsix.py` | Converts the YAML into a `.pkgdef` and packs the `.vsix` |
+| `OneDarkProDarker2026.png` | Extension icon |
 
-![Preview](doc/screenshot-cpp.png)
+### Tweaking the darker surfaces
 
----
-
-## Customizing the Theme
-
-Visual Studio 2026 pane backgrounds use the shared `Shell` surface colors, including `SolidBackgroundFillTertiary`, `SolidBackgroundFillBase`, `CardBackgroundFillDefault`, and `LayerFillDefault`. Keep these at `#1e2227` for darker side panes; the editor background is configured separately under `Text Editor Text Manager Items`. The older `Environment.ToolWindowBackground` and `TreeView.Background` entries also use `#1e2227` for compatibility.
-
-Edit everything inside:
-
-```
-OneDarkPro2026.yaml
-```
-
-Then rebuild:
-
-```sh
-python build_vsix.py -i OneDarkProDarker2026.yaml -o OneDarkProDarker2026
-```
-
-You can modify:
-
-* individual colors
-* entire sections
-* GUIDs
-* metadata (name, author, version)
-* tags and description
-
-The Python builder handles the packaging.
+In Visual Studio 2026, panes draw their background from the shared `Shell` surface colors: `SolidBackgroundFillTertiary`, `SolidBackgroundFillBase`, `CardBackgroundFillDefault`, and `LayerFillDefault`. Change these together to change how dark the side panes are. The editor background is set separately, under `Text Editor Text Manager Items`. The older `Environment.ToolWindowBackground` and `TreeView.Background` entries are kept in sync for compatibility.
 
 ---
 
-## Credits
+## Credits and license
 
-* This repository is forked from [OneDarkPro2026](https://github.com/bayaraa/OneDarkPro2026) by [Bayaraa](https://github.com/bayaraa).
-* The Visual Studio 2026 theme configuration is based on the **One Dark Pro** theme by Adrian Wilczyński:
-  [https://marketplace.visualstudio.com/items?itemName=adrianwilczynski.one-dark-pro](https://marketplace.visualstudio.com/items?itemName=adrianwilczynski.one-dark-pro)
-* The darker palette follows [Binaryify's One Dark Pro Darker theme for VS Code](https://github.com/Binaryify/OneDark-Pro/blob/master/themes/OneDark-Pro-darker.json).
+* **[One Dark Pro 2026](https://github.com/bayaraa/OneDarkPro2026)** by Bayaraa: the base theme, the VS 2026 key fixes, and the YAML-to-VSIX build script. This repository is a fork of it.
+* **[One Dark Pro](https://marketplace.visualstudio.com/items?itemName=adrianwilczynski.one-dark-pro)** by Adrian Wilczyński: the Visual Studio theme that One Dark Pro 2026 is based on.
+* **[One Dark Pro Darker](https://github.com/Binaryify/OneDark-Pro/blob/master/themes/OneDark-Pro-darker.json)** by Binaryify: the darker VS Code palette this variant follows.
+
+MIT license. The original copyright notice is kept in [LICENSE](LICENSE).
