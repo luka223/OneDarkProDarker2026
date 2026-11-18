@@ -1,0 +1,76 @@
+name: Release
+
+# Builds the .vsix and publishes it as a GitHub release whenever the
+# `Version` field in OneDarkProDarker2026.yaml changes to a version that
+# has no tag yet. Pushes that don't change the version build nothing.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - OneDarkProDarker2026.yaml
+      - .github/workflows/release.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install pyyaml
+
+      - name: Read version
+        id: version
+        run: |
+          version=$(python -c 'import yaml; print(yaml.safe_load(open("OneDarkProDarker2026.yaml", encoding="utf-8"))["Version"])')
+          if ! [[ "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "::error::Version '$version' in OneDarkProDarker2026.yaml is not in X.Y.Z form"
+            exit 1
+          fi
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          echo "tag=v$version" >> "$GITHUB_OUTPUT"
+          echo "Theme version: $version"
+
+      - name: Check for existing release
+        id: check
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          # Older tags use both "v" and "V" prefixes, so match either.
+          if git ls-remote --tags origin | awk '{print tolower($2)}' | grep -qxF "refs/tags/v$VERSION"; then
+            echo "Tag for $VERSION already exists, nothing to release."
+            echo "release=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "No tag for $VERSION yet, releasing."
+            echo "release=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Build .vsix
+        if: steps.check.outputs.release == 'true'
+        run: python build_vsix.py -i OneDarkProDarker2026.yaml -o OneDarkProDarker2026
+
+      - name: Publish release
+        if: steps.check.outputs.release == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ steps.version.outputs.tag }}
+        run: |
+          gh release create "$TAG" OneDarkProDarker2026.vsix \
+            --target "$GITHUB_SHA" \
+            --title "One Dark Pro Darker 2026 $TAG" \
+            --generate-notes
